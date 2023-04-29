@@ -15,11 +15,11 @@ export default defineConfig({
     // 项目启动时，是否在浏览器中在打开应用区
     open: true,
     //启动端口
-    port: 8080,
+    port: 1212,
     // 热模块替换
     hmr: {
       host: "127.0.0.1",
-      port: 8080,
+      port: 1212,
     },
     // 设置 https 代理
     proxy: {
