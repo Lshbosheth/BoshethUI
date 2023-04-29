@@ -7,14 +7,27 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint src --fix --ext .ts,.tsx,.vue,.js,.jsx",
-    "prepare": "husky install"
+    "lint": "eslint src --fix --ext .ts,.tsx,.vue,.js,.jsx"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "npm run lint",
+      "prettier --write",
+      "git add"
+    ]
   },
   "dependencies": {
+    "@llrr/rr-databoard-day": "^1.0.4",
     "@types/node": "^18.15.10",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-airbnb-typescript-base": "^4.0.2",
+    "lint-staged": "^13.2.0",
     "pinia": "^2.0.33",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
@@ -28,7 +41,7 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.10.0",
-    "husky": "^8.0.0",
+    "husky": "^8.0.3",
     "prettier": "^2.8.7",
     "typescript": "^4.9.3",
     "vite": "^4.2.0",
